@@ -26,7 +26,14 @@ function howManyTimes(repeatedWords, currentWord) {
 
 
 // Iteration 2 | Number Sequence
-function createSequence() {}
+function createSequence(n) {
+  let numberArray = [];
+  for (let i = 0; i <= n; i++) {
+  numberArray.push(i)
+  }
+  if (n === 0) return []
+  return numberArray;
+}
 
 
 
