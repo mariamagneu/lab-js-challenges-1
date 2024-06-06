@@ -41,7 +41,14 @@ function createSequence(n) {
 // Iteration 3 | Multiply for Each
 const numbers = [1, 2, 5, 10, 13, 50];
 
-function multiplyBy() {}
+function multiplyBy(numbers, num1) {
+  let newArray = [];
+   numbers.forEach(function (element){
+    newArray.push(element * num1)
+   });
+   return newArray
+  }
+  
 
 
 
@@ -50,7 +57,32 @@ function multiplyBy() {}
 const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
-function filterOut() {}
+function filterOut(original, toRemove) {
+  let remainingOriginalElements = [];
+
+  if (original.length === 0) {
+    return null;
+  } else if (toRemove.length === 0){
+    return original;
+  }
+
+  
+
+  for (originalIndex = 0; originalIndex < original.length; originalIndex++) {
+    let shouldKeep = true;
+    for (toRemoveIndex = 0; toRemoveIndex < toRemove.length; toRemoveIndex++) {
+      if (original[originalIndex] === toRemove[toRemoveIndex]) {
+        shouldKeep = false;
+
+        }
+    }
+    if (shouldKeep === true) {
+      remainingOriginalElements.push(original[originalIndex]);
+    }
+  }
+
+      return remainingOriginalElements;
+}
 
 
 
@@ -70,7 +102,23 @@ const duplicateWords = [
   "bring"
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(duplicateWords) {
+  if (duplicateWords.length === 0 ) return null; 
+  // define nonRepeatedArray = duplicateWords[0]
+  let nonRepeatedArray = [duplicateWords[0]];
+  //iterate though duplicatewords to get duplicateWords[i] starting at index 1
+  for (let i = 1; i < duplicateWords.length; i++ ) {
+    //check if nonRepeatedArray.includes(duplicateWords[i]) 
+    if (nonRepeatedArray.includes(duplicateWords[i])) {
+    // if it does, do nothing
+    } else {
+      // if it doesn't, push element to nonRepeated
+      nonRepeatedArray.push(duplicateWords[i])
+    }
+  }
+  // return nonRepeatedArray
+  return nonRepeatedArray;
+}
 
 
 
